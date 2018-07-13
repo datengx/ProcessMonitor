@@ -4,8 +4,8 @@ from utils.myconfigparser import MyConfigParser
 
 
 text = "Hello World!"
-fromaddr = "dateng.cognex@gmail.com"
-toaddr = "da_teng0702@hotmail.com"
+from_address = "dateng.cognex@gmail.com"
+to_address = "da_teng0702@hotmail.com"
 
-pm = PostMaster(text, fromaddr, toaddr)
+pm = PostMaster(text, from_address, to_address)
 pm.send()

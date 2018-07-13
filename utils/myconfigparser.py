@@ -2,8 +2,6 @@ import configparser
 from configparser import ConfigParser
 
 
-
-
 # Modified version of configuration file parser based on the Python library
 # class.
 class MyConfigParser(ConfigParser):
@@ -11,20 +9,19 @@ class MyConfigParser(ConfigParser):
     def __init__(self):
         super(MyConfigParser, self).__init__()
 
-    def getname(self):
-        firstname = ''
-        lastname = ''
+    def get_name(self):
+        first_name = ''
+        last_name = ''
 
         try:
-            firstname = self.get('Setup', 'firstname')
-            lastname = self.get('Setup', 'lastname')
+            first_name = self.get('Setup', 'firstname')
+            last_name = self.get('Setup', 'lastname')
         except configparser.NoOptionError:
             print('Error: parsing Name in the config file.')
 
-        return {'firstname':  firstname, 'lastname': lastname}
+        return {'first_name':  first_name, 'last_name': last_name}
 
-
-    def getemail(self):
+    def get_email(self):
         email = ""
 
         # Raise exception when the parsing failed and return
@@ -36,9 +33,8 @@ class MyConfigParser(ConfigParser):
 
         return email
 
-    def getphonenumber(self):
+    def get_phone_number(self):
         phone = ""
-
 
         try:
             phone = self.get('Setup', 'phone#')

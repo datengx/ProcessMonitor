@@ -5,10 +5,11 @@ from pm.postmaster import PostMaster
 class TestPostMaster(unittest.TestCase):
 
     def test_send(self):
+        subject = "Greetings!"
         text = "Hello World!"
-        fromaddr = "sammy556631@hotmail.com"
-        toaddr = "da_teng0702@hotmail.com"
+        from_address = "sammy556631@hotmail.com"
+        to_address = "da_teng0702@hotmail.com"
 
-        pm = PostMaster(text, fromaddr, toaddr)
+        pm = PostMaster(text, subject, from_address, to_address)
         pm.send()
         self.assertRaises(Exception)

@@ -16,8 +16,8 @@ class TestParser(unittest.TestCase):
     def test_print(self):
         parser = MyConfigParser()
         parser.read('../setup.cfg')
-        print(parser.getname())
-        print(parser.getemail())
-        print(parser.getphonenumber())
+        print(parser.get_name())
+        print(parser.get_email())
+        print(parser.get_phone_number())
         self.assertRaises(Exception)
 
