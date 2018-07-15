@@ -5,15 +5,17 @@ from email.mime.multipart import MIMEMultipart
 
 class PostMaster:
     from_address = ''
+    password = ""
     to_address = ''
     subject = ''
     text = ''
 
-    def __init__(self, subject, text, fromaddr, toaddr):
+    def __init__(self, subject, text, from_address, password, to_address):
         self.subject = subject
         self.text = text
-        self.from_address = fromaddr
-        self.to_address = toaddr
+        self.from_address = from_address
+        self.password = password
+        self.to_address = to_address
 
     def set_from_address(self, address):
         self.from_address = address
@@ -31,6 +33,6 @@ class PostMaster:
         # Send the email out
         s = smtplib.SMTP('smtp.gmail.com', 587)
         s.starttls()
-        s.login("dateng.cognex@gmail.com", "Shadow@900702")
+        s.login(self.from_address, self.password)
         s.sendmail(self.from_address, [self.to_address], msg.as_string())
         s.quit()
