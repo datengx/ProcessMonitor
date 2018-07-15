@@ -5,7 +5,9 @@ import re
 import psutil
 
 # for proc in psutil.process_iter():
-#     if re.match("^Subl", proc.name()):
+#     if re.match("^Code", proc.name()):
 #         print(proc.name())
-pm = ProcMonitor("^Sublime")
+#         print(proc.create_time())
+#         print("\n")
+pm = ProcMonitor("^Code")
 pm.run()

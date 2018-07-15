@@ -36,3 +36,9 @@ class PostMaster:
         s.login(self.from_address, self.password)
         s.sendmail(self.from_address, [self.to_address], msg.as_string())
         s.quit()
+
+    def set_text(self, text):
+        self.text = text
+
+    def set_subject(self, subject):
+        self.subject = subject
